@@ -1,15 +1,24 @@
 <template>
-  <div>
-    <input v-model="name" placeholder="Enter your Name" />
-    <p v-if="name">Welcome {{ name }}</p>
+  <div class="md-layout  md-alignment-center">
+    <div class="md-layout-item md-size-40">
+      <md-content>
+        <md-field>
+          <label>Enter Your name</label>
+          <md-input v-model="userName"></md-input>
+        </md-field>
+        <h3 v-if="userName">Welcome! {{ userName }}</h3>
+      </md-content>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "UserWelcome",
-  props: {
-    name: String
+  data() {
+    return {
+      userName: ""
+    };
   }
 };
 </script>
@@ -18,16 +27,6 @@ export default {
 <style scoped>
 h3 {
   margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-p {
   color: #42b983;
 }
 </style>
